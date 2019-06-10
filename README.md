@@ -1,6 +1,6 @@
 # iamp-mq-component
 
-The **mq-component** is a reusable library (.jar) responsible to do the bridge between applications and queues (IBM MQ).
+The **mq-component** is a reusable library (.jar) responsible for bridging applications and queues (IBM MQ).
 
 All the communications between applications and the MQ/s should occur through this component; it provides a simple interface of communication to read, write and listen from a queue.
 
