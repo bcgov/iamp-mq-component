@@ -1,0 +1,14 @@
+{
+    "app": 
+    {
+        "type": "library"
+    },
+
+    "ciConfig": 
+    {
+        "codeSecurityStage": 
+        {
+            "enable": false
+        }
+    }
+}
