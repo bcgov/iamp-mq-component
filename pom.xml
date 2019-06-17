@@ -10,7 +10,7 @@
 	</parent>
 
 	<groupId>ca.bc.gov</groupId>
-	<artifactId>mq.component</artifactId>
+	<artifactId>mq-component</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>mq-component</name>
 	<description>MQ Component for BCPARIS</description>

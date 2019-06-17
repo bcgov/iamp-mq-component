@@ -20,6 +20,7 @@ import com.ibm.msg.client.wmq.WMQConstants;
 import ca.bc.gov.mq.component.MQComponent;
 import ca.bc.gov.mq.component.exception.MQCommunicationException;
 import ca.bc.gov.mq.component.exception.MQConnectionException;
+import ca.bc.gov.mq.component.properties.MQConfigurationFile;
 import ca.bc.gov.mq.component.properties.MQConfigurationProperties;
 import lombok.Getter;
 
@@ -33,13 +34,14 @@ public class MQComponentLogic implements MQComponent {
 	private JMSProducer producer;
 	private JMSConsumer consumer;
 	
-	private final String MQ_COMPONENT_CONTEXT_XML = "mq-component.xml";
+	@Autowired
+	MQConfigurationFile configurationFile;
 	
 	@Autowired
 	MQConfigurationProperties configurationProperties;
 	
 	private void loadApplicationContext() {
-		appContext = new ClassPathXmlApplicationContext(MQ_COMPONENT_CONTEXT_XML);
+		appContext = new ClassPathXmlApplicationContext(configurationFile.getFilename());
 	}
 	
 	private void loadConfigurationProperties(String mq) {
@@ -85,7 +87,7 @@ public class MQComponentLogic implements MQComponent {
 		TextMessage textMessage = context.createTextMessage(message);
 		producer = context.createProducer();
 		
-		if (producer == null) {
+		if (textMessage == null || producer == null) {
 			throw new MQCommunicationException();
 		}
 		
