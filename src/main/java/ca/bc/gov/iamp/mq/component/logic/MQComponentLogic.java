@@ -1,4 +1,4 @@
-package ca.bc.gov.mq.component.logic;
+package ca.bc.gov.iamp.mq.component.logic;
 
 import javax.jms.JMSConsumer;
 import javax.jms.JMSContext;
@@ -17,11 +17,11 @@ import com.ibm.msg.client.jms.JmsConnectionFactory;
 import com.ibm.msg.client.jms.JmsFactoryFactory;
 import com.ibm.msg.client.wmq.WMQConstants;
 
-import ca.bc.gov.mq.component.MQComponent;
-import ca.bc.gov.mq.component.exception.MQCommunicationException;
-import ca.bc.gov.mq.component.exception.MQConnectionException;
-import ca.bc.gov.mq.component.properties.MQConfigurationFile;
-import ca.bc.gov.mq.component.properties.MQConfigurationProperties;
+import ca.bc.gov.iamp.mq.component.MQComponent;
+import ca.bc.gov.iamp.mq.component.exception.MQCommunicationException;
+import ca.bc.gov.iamp.mq.component.exception.MQConnectionException;
+import ca.bc.gov.iamp.mq.component.properties.MQConfigurationFile;
+import ca.bc.gov.iamp.mq.component.properties.MQConfigurationProperties;
 import lombok.Getter;
 
 @Component

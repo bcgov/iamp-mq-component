@@ -1,4 +1,4 @@
-package ca.bc.gov.mq.component.properties;
+package ca.bc.gov.iamp.mq.component.properties;
 
 import org.springframework.stereotype.Component;
 

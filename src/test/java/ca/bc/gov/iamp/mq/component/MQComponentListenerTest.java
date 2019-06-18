@@ -1,4 +1,4 @@
-package ca.bc.gov.mq.component;
+package ca.bc.gov.iamp.mq.component;
 
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -17,9 +17,9 @@ import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.integration.annotation.IntegrationComponentScan;
 
-import ca.bc.gov.mq.component.exception.MQCommunicationException;
-import ca.bc.gov.mq.component.exception.MQConnectionException;
-import ca.bc.gov.mq.component.logic.MQComponentLogic;
+import ca.bc.gov.iamp.mq.component.exception.MQCommunicationException;
+import ca.bc.gov.iamp.mq.component.exception.MQConnectionException;
+import ca.bc.gov.iamp.mq.component.logic.MQComponentLogic;
 
 @RunWith(MockitoJUnitRunner.class)
 @SpringBootTest

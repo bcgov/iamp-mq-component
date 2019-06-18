@@ -1,4 +1,4 @@
-package ca.bc.gov.mq.component.model;
+package ca.bc.gov.iamp.mq.component.model;
 
 import lombok.Getter;
 import lombok.Setter;

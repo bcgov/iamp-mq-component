@@ -3,17 +3,18 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>ca.bc.gov.iamp</groupId>
+	<artifactId>mq-component</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<name>IAMP MQ Component</name>
+	<description>MQ Component to facilitate MQ integration.</description>
+
 	<parent>
 		<groupId>ca.bc.gov.iamp</groupId>
 		<artifactId>spring-boot-parent</artifactId>
 		<version>1.0.1-SNAPSHOT</version>
 	</parent>
-
-	<groupId>ca.bc.gov</groupId>
-	<artifactId>mq-component</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>mq-component</name>
-	<description>MQ Component for BCPARIS</description>
 
 	<properties>
 		<java.version>1.8</java.version>
@@ -46,14 +47,5 @@
 
 
 	</dependencies>
-
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-		</plugins>
-	</build>
 
 </project>

@@ -1,4 +1,4 @@
-package ca.bc.gov.mq.component.exception;
+package ca.bc.gov.iamp.mq.component.exception;
 
 public class MQCommunicationException extends Exception {
 
