@@ -10,7 +10,7 @@ import lombok.Setter;
 @Setter
 public class MQConfigurationProperties {
 	
-	public String host; // Host name or IP address
+	private String host; // Host name or IP address
 	private int port; // Listener port for your queue manager
 	private String channel; // Channel name
 	private String queueManager; // Queue manager name

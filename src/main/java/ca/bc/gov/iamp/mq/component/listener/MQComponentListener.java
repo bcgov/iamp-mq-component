@@ -10,8 +10,8 @@ import org.springframework.stereotype.Component;
 import ca.bc.gov.iamp.mq.component.exception.MQCommunicationException;
 import ca.bc.gov.iamp.mq.component.exception.MQConnectionException;
 
-@ComponentScan(basePackages= {"ca.bc.gov.mq.component.logic"})
-@EntityScan(basePackages= {"ca.bc.gov.mq.component.model"})
+@ComponentScan(basePackages= {"ca.bc.gov.iamp.mq.component.logic"})
+@EntityScan(basePackages= {"ca.bc.gov.mq.iamp.component.model"})
 @Component
 public interface MQComponentListener {
 

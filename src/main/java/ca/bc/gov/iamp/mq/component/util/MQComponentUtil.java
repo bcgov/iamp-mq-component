@@ -9,13 +9,13 @@ import ca.bc.gov.iamp.mq.component.model.IncomingMessageHeader;
 public class MQComponentUtil {
 
 	@SuppressWarnings("unused")
-	private IncomingMessage fromJMSMessage(Message JMSMessage) throws JMSException {
+	private IncomingMessage fromJMSMessage(Message jmsMessage) throws JMSException {
 		IncomingMessageHeader header = new IncomingMessageHeader();
-		header.setPriority(JMSMessage.getJMSPriority());
+		header.setPriority(jmsMessage.getJMSPriority());
 		
 		IncomingMessage message = new IncomingMessage();
 		message.setHeader(header);
-		message.setBody(JMSMessage.getBody(String.class));
+		message.setBody(jmsMessage.getBody(String.class));
 		return message;
 	}
 	
