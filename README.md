@@ -15,7 +15,7 @@ Create an XML file named **mq-component.xml** in your classpath (i.e. /src/main/
                http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
     
     	<bean id="MQ1"
-    	class="ca.bc.gov.mq.component.properties.MQConfigurationProperties">
+    	class="ca.bc.gov.iamp.mq.component.properties.MQConfigurationProperties">
     		<property name="host" value="localhost" />
     		<property name="port" value="1414" />
     		<property name="channel" value="DEV.APP.SVRCONN" />
@@ -26,7 +26,7 @@ Create an XML file named **mq-component.xml** in your classpath (i.e. /src/main/
     	</bean>
     
     	<bean id="MQ2"
-    	class="ca.bc.gov.mq.component.properties.MQConfigurationProperties">
+    	class="ca.bc.gov.iamp.mq.component.properties.MQConfigurationProperties">
     		<property name="host" value="localhost" />
     		<property name="port" value="1414" />
     		<property name="channel" value="DEV.APP.SVRCONN" />

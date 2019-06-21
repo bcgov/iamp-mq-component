@@ -7,29 +7,29 @@ import lombok.Setter;
 @Setter
 public class IncomingMessageHeader {
 
-	private String CPICVer;
-	private String AgencyId;
-	private String UserId;
-	private String Role;
-	private String DeviceId;
+	private String cpicVer;
+	private String agencyId;
+	private String userId;
+	private String role;
+	private String deviceId;
 	
-	private MQMessageHeaderOrigin Origin;
-	private MQMessageHeaderRouting Routing;
+	private MQMessageHeaderOrigin origin;
+	private MQMessageHeaderRouting routing;
 	
-	private String UDF;
-	private int Priority;
+	private String udf;
+	private int priority;
 	
 	@Getter
 	@Setter
 	public class MQMessageHeaderOrigin {
-		private String QMgrName;
-		private String QName;
+		private String qMgrName;
+		private String qName;
 	}
 	
 	@Getter
 	@Setter
 	public class MQMessageHeaderRouting {
-		private String QMgrName;
-		private String QName;
+		private String qMgrName;
+		private String qName;
 	}
 }

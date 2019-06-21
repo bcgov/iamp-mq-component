@@ -18,10 +18,10 @@ public class OutcomingMessage {
 		private String senderID;
 		private String correlationID;
 		private String responseMessageID;
-		private String PANMessageID;
-		private String NANMessageID;
-		private String ERRMessageID;
+		private String panMessageID;
+		private String nanMessageID;
+		private String errMessageID;
 		private String timeStamp;
-		private String UDF;
+		private String udf;
 	}
 }
