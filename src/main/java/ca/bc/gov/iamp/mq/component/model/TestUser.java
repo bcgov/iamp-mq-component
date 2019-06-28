@@ -5,9 +5,11 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class IncomingMessage {
+public class TestUser {
 
-	private IncomingMessageHeader header;
+	private int postId;
+	private int id;
+	private String name;
+	private String email;
 	private String body;
-	
 }

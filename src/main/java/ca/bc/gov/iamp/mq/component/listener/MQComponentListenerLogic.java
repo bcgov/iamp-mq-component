@@ -7,7 +7,6 @@ import javax.jms.MessageListener;
 import javax.jms.Queue;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
 
 import ca.bc.gov.iamp.mq.component.exception.MQCommunicationException;
@@ -19,7 +18,6 @@ import lombok.Getter;
 @Getter
 public class MQComponentListenerLogic implements MQComponentListener {
 
-	private ApplicationContext appContext;
 	private JMSContext context;
 	private Queue destination;
 	private JMSConsumer consumer;
@@ -32,7 +30,7 @@ public class MQComponentListenerLogic implements MQComponentListener {
 		destination = mqComponentConnector.getConnectionDestination(context);
 	}
 	
-	public void listen(MessageListener listener) throws MQConnectionException, MQCommunicationException {
+	public void listen(MessageListener listener) throws MQCommunicationException {
 		if (context == null || destination == null) {
 			throw new MQCommunicationException();
 		}

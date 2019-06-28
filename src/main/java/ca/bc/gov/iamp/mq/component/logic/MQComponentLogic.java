@@ -9,7 +9,6 @@ import javax.jms.Queue;
 import javax.jms.TextMessage;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
 
 import ca.bc.gov.iamp.mq.component.MQComponent;
@@ -22,7 +21,6 @@ import lombok.Getter;
 @Getter
 public class MQComponentLogic implements MQComponent {
 
-	private ApplicationContext appContext;
 	private JMSContext context;
 	private Queue destination;
 	private JMSConsumer consumer;
@@ -35,9 +33,9 @@ public class MQComponentLogic implements MQComponent {
 		destination = mqComponentConnector.getConnectionDestination(context);
 	}
 
-	public TextMessage send(String message) throws MQConnectionException, MQCommunicationException {
+	public TextMessage send(String message) throws MQCommunicationException {
 		if (context == null || destination == null) {
-			throw new MQConnectionException();
+			throw new MQCommunicationException();
 		}
 		
 		TextMessage textMessage = context.createTextMessage(message);
@@ -51,7 +49,7 @@ public class MQComponentLogic implements MQComponent {
 		return textMessage;
 	}
 	
-	public Message consume() throws MQConnectionException, MQCommunicationException {
+	public Message consume() throws MQCommunicationException {
 		if (context == null || destination == null) {
 			throw new MQCommunicationException();
 		}
@@ -60,7 +58,7 @@ public class MQComponentLogic implements MQComponent {
 		return consumer.receive();
 	}
 
-	public String consumeText() throws MQConnectionException, MQCommunicationException {
+	public String consumeText() throws MQCommunicationException {
 		if (context == null || destination == null) {
 			throw new MQCommunicationException();
 		}

@@ -17,8 +17,8 @@ import ca.bc.gov.iamp.mq.component.exception.MQConnectionException;
 public interface MQComponent {
 
 	public void connect(String mq) throws JMSException, MQConnectionException;
-	public TextMessage send(String message) throws MQConnectionException, MQCommunicationException;
-	public Message consume() throws MQConnectionException, MQCommunicationException;
-	public String consumeText() throws MQConnectionException, MQCommunicationException;
+	public TextMessage send(String message) throws MQCommunicationException;
+	public Message consume() throws MQCommunicationException;
+	public String consumeText() throws MQCommunicationException;
 	
 }

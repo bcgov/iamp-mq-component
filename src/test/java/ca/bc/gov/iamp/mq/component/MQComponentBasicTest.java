@@ -65,7 +65,7 @@ public class MQComponentBasicTest {
 		TextMessage result = null;
 		try {
 			result = validComponent.send(sentMessageStr);
-		} catch (MQConnectionException | MQCommunicationException e) {
+		} catch (MQCommunicationException e) {
 			
 		}
 		verify(context).createTextMessage(sentMessageStr);
@@ -95,7 +95,7 @@ public class MQComponentBasicTest {
 		Message result = null;
 		try {
 			result = validComponent.consume();
-		} catch (MQConnectionException | MQCommunicationException e) {
+		} catch (MQCommunicationException e) {
 			
 		}
 		verify(context).createConsumer(destination);
@@ -113,7 +113,7 @@ public class MQComponentBasicTest {
 		String result = null;
 		try {
 			result = validComponent.consumeText();
-		} catch (MQConnectionException | MQCommunicationException e) {
+		} catch (MQCommunicationException e) {
 
 		}
 		verify(context).createConsumer(destination);

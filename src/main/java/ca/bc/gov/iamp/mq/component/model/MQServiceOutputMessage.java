@@ -5,7 +5,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class OutcomingMessage {
+public class MQServiceOutputMessage {
 
 	private OutputMessageHeader header;
 	private String body;
