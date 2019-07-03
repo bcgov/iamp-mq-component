@@ -6,7 +6,9 @@ All the communications between applications and the MQ/s should occur through th
 
 # Configuration
 
-Create an XML file named **mq-component.xml** in your classpath (i.e. /src/main/resources), and copy the following example:
+## Direct access
+
+If there is direct access to the MQ server, create an XML file named **mq-component.xml** in your classpath (i.e. /src/main/resources), and copy the following example:
 
     <?xml version="1.0" encoding="UTF-8"?>
     <beans xmlns="http://www.springframework.org/schema/beans"
@@ -50,9 +52,25 @@ Each new MQ added to the configuration is a new `<bean id=”MQx” />` added to
 | appPassword | password of user with access to the MQ installation |
 | queueName | name of queue |
 
+## API Gateway access
+
+In case the MQ can only be accessed via an API gateway, the following properties must be configured inside your **application.properties** file:
+
+	mq.service.name=MQService
+	mq.service.url=https://mqapigateway.com
+	mq.service.send.path=/sendToService
+	mq.service.consume.path=/consumeFromService
+	
+| property name | description |
+|--|--|
+| mq.service.name | MQ name |
+| mq.service.url | MQ service host url |
+| mq.service.send.path | Service path for sending messages |
+| mq.service.consume.path | Service path for consuming messages |
+
 # Usage examples
 
-## Reading from a queue
+## Reading from a queue (direct access)
 
 ### Steps:
 
@@ -80,7 +98,23 @@ Each new MQ added to the configuration is a new `<bean id=”MQx” />` added to
     	return receivedMessage;
     }
 
-## Writing to a queue
+## Reading from a queue (API gateway access)
+
+### Steps:
+
+ 1. Declare and autowire an MQComponentServiceClient object;
+ 2. Use the *consumeFromService()* method to get the next queued message in the queue.
+
+### Code:
+
+	@Autowired
+	private MQComponentServiceClient mqService;
+	
+	public ResponseEntity<MQServiceResponse> consumeFromService() {
+		return ResponseEntity.ok(mqService.consumeFromService().getBody());
+	}
+
+## Writing to a queue (direct access)
 
 ### Steps:
 
@@ -109,8 +143,24 @@ Each new MQ added to the configuration is a new `<bean id=”MQx” />` added to
     	return sampleMessage.toString();
     }
 
+## Writing to a queue (API gateway access)
 
-## Listening to a queue
+### Steps:
+
+ 1. Declare and autowire an MQComponentServiceClient object;
+ 2. Use the *sendToService()* method to get the next queued message in the queue.
+
+### Code:
+
+	@Autowired
+	private MQComponentServiceClient mqService;
+	
+	public ResponseEntity<MQServiceResponse> sendToService() {
+		return ResponseEntity.ok(mqService.sendToService().getBody());
+	}
+
+
+## Listening to a queue (direct access)
 
 ### Steps:
 
