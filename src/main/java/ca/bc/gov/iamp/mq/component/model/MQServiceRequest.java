@@ -5,9 +5,9 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class IncomingMessage {
+public class MQServiceRequest {
 
-	private IncomingMessageHeader header;
+	private String header;
 	private String body;
 	
 }
